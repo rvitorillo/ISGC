@@ -1,0 +1,101 @@
+===================================
+RF TRANSMITTER 
+===================================
+RF stands for (Radio Frequency), it is an electromagnetic wave between 1-3 GHz.
+above that are Microwave frequencies: 3-30 GHz
+
+Power is related to the energy of the wave
+Bandwidth is the width of the wave or the period.
+
+-----
+FREQUENCY = 1/T (inversely proportional to Period)
+F       Period
+1Hz = 1 sec
+1kHz = 1 millisecond
+1 Mhz = 1 microsecond
+hertz (wave cycles per second)
+----
+UNIT Decibel: is a logarthimic unit indicates the ratio of a physical quantity (usually power or intensity) relative to a specified or implied reference level. A ratio in decibels is ten times the logarithm to base 10 of the ratio of two power quantities.A change in power ratio by a factor of 10 is a 10 dB change. A change in power ratio by a factor of two is approximately a 3 dB change.
+The decibel symbol is often qualified with a suffix that indicates which reference quantity or frequency weighting functionhas been used. For example, dBm indicates a reference level of one milliwatt, while dBu is referenced to approximately 0.775 volts RMS.
+Alexander Graham Bell
+
+x dBN = 10*log10
+1000 = 10^3 = 30 dB
+1 = 10^0 = 0 dB
+1/1000 000 = - 10^6 = -60 dB
+Instead of multiplying things in the linear domain, you can add things in the logarithmic domain. This is useful for very large or very small
+----
+Links:
+http://gsfcir.gsfc.nasa.gov/search/balloontech/communications
+
+==================
+APRS TRACKER
+==================
+APRS (Automatic Position Reporting System)
+An APRS tracker takes position information supplied by a (GPS) receiver, 
+reformats it as packet radio data,
+converts the data to a modulated audio signal,
+and passes the signal to a transmitter (typically a VHF FM radio).
+
+At the receiving end, a packet radio Terminal Node Controller (TNC) decodes the 
+transmission and feeds the information to a computer running APRS software. 
+
+The BigRedBee: http://www.bigredbee.com/docs/BLGPS/QSTReviewAug07.pdf
+The BeeLine: is a tiny (1 1/4 × 3 inch) module 
+that contains: a GPS receiver and GPS patch antenna, a Lithium-Poly battery and a 70-cm FM transmitter.
+weighs: about 2 ounces.
+
+Trackuino
+is a new open source (GPLv2 license) Arduino APRS tracker.
+An amateur radio method used to relay small packets of position-tracking data
+to an online database for easy access and mapping.
+In this case, GPS telemetry data is used to track
+latitude, longitude, altitude, course, speed, and time measurements
+Data can be tracked in real time on aprs.fi
+http://code.google.com/p/trackuino/downloads/list
+
+Trackuino includes
+-an onboard radio so no external handheld unit is necessary.
+-designed primarily for high-altitude balloon tracking,
+-dual temperature sensors,
+-support for a humidity sensor,
+-and a remote “cut-down” trigger
+
+From previous users, the trackuino can recieve ground signsls from 600Km away
+here: http://crocketteng.com/blog/
+
+Arduino shield form factor (you can stack more shields on it)
+GPS: Venus 638FLPx. Reports okay above 18 Km.
+Radio: Radiometrix's HX1 (300 mW).
+1200 bauds AFSK using 8-bit PWM
+Sends out standard APRS position messages (latitude, longitude, altitude, course, speed and time).
+
+--
+Some information to keep track of:
+Payload Mass (g)  
+Balloon Mass (g)
+Neck Lift (g)
+Gas Used: Hydrogen 
+Maximum Altitude (ft) 
+Flight Duration (min) 
+Flight Distance (miles)
+--
+
+misc links:
+wireless power: http://www.youtube.com/watch?v=9oyrzX6rpws
+http://www.youtube.com/watch?NR=1&v=-Wf7aadxBkE&feature=endscreen
+http://www.youtube.com/watch?v=-b7LDtsaS8Y
+faraday's fields: http://web.mit.edu/8.02t/www/802TEAL3D/visualizations/faraday/index.htm
+
+==================
+PREDICTION
+==================
+Knowing
+- the ascent rate,
+-the burst altitude
+-the most current winds data
+= the landing spot can be predicted to avoid mired/sea/wood areas.
+
+
+
+
