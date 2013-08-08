@@ -1,0 +1,63 @@
+Documentation for connecting the Kenwood TM-D700 to Mac
+
+1. Download MacPorts (if minicom is not installed)
+
+http://www.macports.org/install.php (.pkg installer is probably easiest)
+
+Restart
+
+2. Download minicom through MacPorts
+sudo port install minicom
+
+Restart
+
+3. Download IOgear (Model:GUC232A) driver
+
+http://www.iogear.com/support/dm/driver/GUC232A#display
+
+Restart.
+
+4. Connect the Kenwood Serial connector to the IOgear (Model:GUC232A) Serial-to-USB adapter
+
+Open Terminal
+
+ls /dev/tty.*
+//lists connected USB ports
+
+sudo ln -s /dev/tty.PL2303-******** /dev/ttyUSB0
+//replace *'s with what was found in previous command
+
+sudo minicom -s
+
+Setup based on parameters from Comm Setup on UIview on PC, TM-D700.CMD
+Save as default
+
+Exit, but remain in minicom. If minicom closes:
+sudo minicom -o
+
+"cmd:" should show up. If not, follow instructions in TM-D700A Specialized.pdf manual.
+Available here:
+
+http://www.kenwoodusa.com/Communications/Amateur_Radio/Amateur_Radio_Retired/TM-D700A
+
+Page 4, Preparation Flow.
+This should set up the terminal in Minicom
+
+You should see the following:
+
+TASCO Radio Modem
+> AX.25 Level 2 Version 2.0
+> Release 03/Dec/99 3Chip ver 1.08
+> Checksum $04
+> cmd: DA 070327210135
+> cmd:
+
+Input commands from TM-D700.CMD under "SETUP"
+Terminal should be displaying any packets received. If not, restart Terminal and try again.
+Once this is complete, close Minicom. Compile HarvestSerial.c and SiftAPRS.c, ensuring that they are pointing to the appropriate USB port and directories.
+
+HARVESTSERIAL.c
+SIFTAPRS.c
+change fpi=fopen("APRS_********",r); to proper date
+
+To connect to website: http://"hostIPaddress"
